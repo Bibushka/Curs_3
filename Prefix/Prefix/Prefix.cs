@@ -14,11 +14,18 @@ namespace Prefix
 
         public string GetPrefix(string firstString, string secondString)
         {
-            string prefix=string.Empty;
+            string prefix = string.Empty;
             for (int i = 0; i < firstString.Length; i++)
-                if (firstString[i] == secondString[i])
+                if (IsCharEqual(firstString[i],secondString[i]))
                     prefix += firstString[i];
             return prefix;
+        }
+
+        public bool IsCharEqual(char a, char b)
+        {
+            if(a == b)
+                return true;
+            return false;
         }
     }
 }

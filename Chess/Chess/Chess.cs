@@ -13,7 +13,7 @@ namespace Chess
         }
 
         [TestMethod]
-        public void TestMethod2()
+        public void GetChessBoardSquares()
         {
             Assert.AreEqual(204, GetNumberOfSquares(8));
         }
@@ -22,7 +22,7 @@ namespace Chess
         {
             int numberOfSquares = 0;
             for (int i = 1; i <= boardLength; i++)
-                numberOfSquares = numberOfSquares + i * i;
+                numberOfSquares += i * i;
             return numberOfSquares;
         }
         

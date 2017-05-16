@@ -9,33 +9,31 @@ namespace Panagram
         [TestMethod]
         public void IsTruePanagram()
         {
-            Assert.AreEqual(true, IsPanagram("The quick brown fox jumps over the lazy dog"));
+            Assert.IsTrue(IsPanagram("The quick brown fox jumps over the lazy dog"));
         }
 
         [TestMethod]
         public void IsNotPanagram()
         {
-            Assert.AreEqual(false, IsPanagram("the quick brown fox jumps over the lzy dog"));
+            Assert.IsFalse(IsPanagram("the quick brown fox jumps over the lzy dog"));
         }
 
-        public bool IsPanagram(string fraze)
+        public bool IsPanagram(string phrase)
         {
             string alphanbet = "abcdefghijklmnopqrstuvwxyz";
             int counter=0;
             for (int i = 0; i < alphanbet.Length; i++)
-                if (IsLetterInFraze(alphanbet[i], fraze)==1)
+                if (IsLetterInPhrase(alphanbet[i], phrase))
                     counter++;
-            if (counter == 26)
-                return true;
-            return false;
+            return counter == 26;
         }
 
-        public int IsLetterInFraze(char letter, string fraze)
+        public bool IsLetterInPhrase(char letter, string phrase)
         {
-            for (int i = 0; i < fraze.Length; i++)
-                if (letter == fraze[i])
-                    return 1;
-            return 0;
+            for (int i = 0; i < phrase.Length; i++)
+                if (letter == phrase[i])
+                    return true;
+            return false;
         }
     }
 }

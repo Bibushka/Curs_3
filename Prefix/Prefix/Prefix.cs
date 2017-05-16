@@ -9,15 +9,19 @@ namespace Prefix
         [TestMethod]
         public void TestMethod1()
         {
-            Assert.AreEqual("aaa", GetPrefix("aaab", "aaaaam"));
+            Assert.AreEqual("aba", GetPrefix("abaa", "abac"));
         }
 
         public string GetPrefix(string firstString, string secondString)
         {
             string prefix = string.Empty;
             for (int i = 0; i < firstString.Length; i++)
-                if (IsCharEqual(firstString[i],secondString[i]))
+            {
+                if (IsCharEqual(firstString[i], secondString[i]))
                     prefix += firstString[i];
+                else
+                    break;
+            }
             return prefix;
         }
 

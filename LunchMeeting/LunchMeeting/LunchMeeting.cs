@@ -14,7 +14,15 @@ namespace LunchMeeting
 
         public int GetNextLunchDate(int myLunchTime, int friendLunchTime)
         {
-            return 0;
+            int multiplier = myLunchTime * friendLunchTime;
+            while (myLunchTime != friendLunchTime)
+            {
+                if (myLunchTime > friendLunchTime)
+                    myLunchTime -= friendLunchTime;
+                else
+                    friendLunchTime -= myLunchTime;
+            }
+            return multiplier / myLunchTime;
         }
     }
 }

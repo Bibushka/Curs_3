@@ -14,15 +14,24 @@ namespace LunchMeeting
 
         public int GetNextLunchDate(int myLunchTime, int friendLunchTime)
         {
-            int multiplier = myLunchTime * friendLunchTime;
-            while (myLunchTime != friendLunchTime)
+            return GetProductOfTwhoNumbers(myLunchTime, friendLunchTime)/GetCMMDCOfTwoNumbers(myLunchTime, friendLunchTime);
+        }
+
+        public int GetProductOfTwhoNumbers(int a, int b)
+        {
+            return a * b;
+        }
+
+        public int GetCMMDCOfTwoNumbers(int a, int b)
+        {
+            while (a != b)
             {
-                if (myLunchTime > friendLunchTime)
-                    myLunchTime -= friendLunchTime;
+                if (a > b)
+                    a -= b;
                 else
-                    friendLunchTime -= myLunchTime;
+                    b -= a;
             }
-            return multiplier / myLunchTime;
+            return a;
         }
     }
 }

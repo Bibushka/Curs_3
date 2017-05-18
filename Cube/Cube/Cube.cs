@@ -12,6 +12,18 @@ namespace Cube
             Assert.AreEqual(192, GetCubeNumber(1));
         }
 
+        [TestMethod]
+        public void TestForKTwo()
+        {
+            Assert.AreEqual(442, GetCubeNumber(2));
+        }
+
+        [TestMethod]
+        public void TestForKThree()
+        {
+            Assert.AreEqual(692, GetCubeNumber(3));
+        }
+
         public int GetCubeNumber(int k)
         {
             int kCount = 0;

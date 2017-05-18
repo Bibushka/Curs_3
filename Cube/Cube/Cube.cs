@@ -9,7 +9,7 @@ namespace Cube
         [TestMethod]
         public void TestMethod1()
         {
-            Assert.AreEqual(192, GetCubeNumber(1));
+            Assert.AreEqual(1, GetCubeNumber(1));
         }
 
         public double GetCubeNumber(int k)

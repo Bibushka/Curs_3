@@ -24,6 +24,12 @@ namespace Cube
             Assert.AreEqual(692, GetCubeNumber(3));
         }
 
+        [TestMethod]
+        public void TestForKSix()
+        {
+            Assert.AreEqual(0, GetCubeNumber(6));
+        }
+
         public int GetCubeNumber(int k)
         {
             int kCount = 0;

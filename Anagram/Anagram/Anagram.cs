@@ -15,6 +15,7 @@ namespace Anagram
         public int GetNumberOfAnagrams(string word)
         {
             int count = 1;
+            string[] anagrams;
             for (int i = 1; i <= word.Length; i++)
                 count *= i;
             return count;

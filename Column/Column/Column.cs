@@ -9,12 +9,15 @@ namespace Column
         [TestMethod]
         public void TestMethod1()
         {
-            Assert.AreEqual("yep", GetColumnLetters(5));
+            Assert.AreEqual('g', GetColumnLetters(7));
         }
 
-        public string GetColumnLetters(int columnIndex)
+        public char GetColumnLetters(int columnIndex)
         {
-            return "noup";
+            for (int l = 1; l <= 26; l++)
+                if (columnIndex == l)
+                    return (char)(97 + l-1);
+            return '\n';
         }
     }
 }

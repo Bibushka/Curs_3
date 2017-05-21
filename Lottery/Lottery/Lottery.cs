@@ -9,25 +9,25 @@ namespace Lottery
         [TestMethod]
         public void GetSixOfFortynine()
         {
-            Assert.AreEqual(13983816, GetLotteryChances(6,49));
+            Assert.AreEqual(0.0000000715, GetLotteryChances(6,49),1000000000);
         }
 
         [TestMethod]
         public void GetFiveOfFortynine()
         {
-            Assert.AreEqual(1906884, GetLotteryChances(5, 49));
+            Assert.AreEqual(0.0000184, GetLotteryChances(5, 49), 1000000);
         }
 
         [TestMethod]
         public void GetFourOfFortynine()
         {
-            Assert.AreEqual(211876, GetLotteryChances(4, 49));
+            Assert.AreEqual(0.000969, GetLotteryChances(4, 49), 100000);
         }
 
         [TestMethod]
         public void GetFiveOfForty()
         {
-            Assert.AreEqual(658008, GetLotteryChances(5, 40));
+            Assert.AreEqual(0.000151, GetLotteryChances(5, 40), 100000);
         }
 
         public double GetLotteryChances(int numberOfBalls, int totalNumberOfBalls)
@@ -39,7 +39,7 @@ namespace Lottery
                 totalNumberOfBalls--;
                 numberOfBalls--;
             }
-            return chance;
+            return 1/chance;
         }
     }
 }

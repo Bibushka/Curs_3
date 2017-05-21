@@ -15,13 +15,13 @@ namespace Column
         [TestMethod]
         public void GetTwoLetterColumn()
         {
-            Assert.AreEqual("bz", GetColumnLetters(80));
+            Assert.AreEqual("zz", GetColumnLetters(728));
         }
-
+        
         public string GetColumnLetters(int columnIndex)
         {
             string columnName = string.Empty;
-            if(columnIndex/27==0)
+            if (columnIndex / 27 == 0)
                 return columnName + GetLastLetter(columnIndex % 27);
             if (columnIndex / 27 <= 26)
                 return columnName + GetLastLetter(columnIndex / 27) + GetLastLetter(columnIndex % 27);

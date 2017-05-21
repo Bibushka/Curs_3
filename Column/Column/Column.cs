@@ -7,14 +7,25 @@ namespace Column
     public class Column
     {
         [TestMethod]
-        public void TestMethod1()
+        public void GetOneLetterColumn()
         {
-            Assert.AreEqual('y', GetColumnLetters(25));
+            Assert.AreEqual("z", GetColumnLetters(26));
         }
 
-        public char GetColumnLetters(int columnIndex)
+        [TestMethod]
+        public void GetTwoLetterColumn()
         {
-            return GetLastLetter(columnIndex % 27);
+            Assert.AreEqual("bz", GetColumnLetters(80));
+        }
+
+        public string GetColumnLetters(int columnIndex)
+        {
+            string columnName = string.Empty;
+            if(columnIndex/27==0)
+                return columnName + GetLastLetter(columnIndex % 27);
+            if (columnIndex / 27 <= 26)
+                return columnName + GetLastLetter(columnIndex / 27) + GetLastLetter(columnIndex % 27);
+            return columnName;
         }
 
         public char GetLastLetter(int reminder)

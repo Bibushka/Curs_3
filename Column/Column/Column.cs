@@ -9,30 +9,33 @@ namespace Column
         [TestMethod]
         public void GetOneLetterColumn()
         {
-            Assert.AreEqual("z", GetColumnLetters(26));
+            Assert.AreEqual("a", GetColumnLetters(1));
         }
 
-        [TestMethod]
+       /* [TestMethod]
         public void GetTwoLetterColumn()
         {
             Assert.AreEqual("zz", GetColumnLetters(728));
-        }
+        }*/
         
         public string GetColumnLetters(int columnIndex)
         {
             string columnName = string.Empty;
-            if (columnIndex / 27 == 0)
-                return columnName + GetLastLetter(columnIndex % 27);
-            if (columnIndex / 27 <= 26)
-                return columnName + GetLastLetter(columnIndex / 27) + GetLastLetter(columnIndex % 27);
+            while (columnIndex != 0)
+            {
+                columnIndex--;
+                columnName = columnName + GetLetter(columnIndex % 26);
+                columnIndex = columnIndex / 26;
+            }
             return columnName;
         }
 
-        public char GetLastLetter(int reminder)
+
+        public char GetLetter(int reminder)
         {
-            for (int l = 1; l <= 26; l++)
+            for (int l = 0; l <=25; l++)
                 if (reminder == l)
-                    return (char)(96 + l);
+                    return (char)( 'a' + l);
             return ' ';
         }
 

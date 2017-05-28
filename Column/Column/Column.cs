@@ -24,10 +24,10 @@ namespace Column
             while (columnIndex != 0)
             {
                 columnIndex--;
-                columnName = columnName + GetLetter(columnIndex % 26);
+                columnName = GetLetter(columnIndex % 26) + columnName;
                 columnIndex = columnIndex / 26;
             }
-            return Reverse(columnName);
+            return columnName;
         }
 
 
